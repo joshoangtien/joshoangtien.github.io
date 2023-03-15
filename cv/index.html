@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://joshoangtien.dev/joshoangtien.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://joshoangtien.dev/joshoangtien.png" />
+    <link rel="mask-icon" type="image/x-icon" href="https://joshoangtien.dev/joshoangtien.png" color="#111" />
+    <meta name="robots" content="index,follow" />
+    <meta name="apple-mobile-web-app-title" content="joshoangtien.dev">
+    <meta name="application-name" content="joshoangtien.dev">
+    <meta property="image" content="https://joshoangtien.dev/joshoangtien.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Jos Hoàng Tiên" />
+    <meta name="twitter:description" content="Jos Hoàng Tiên" />
+    <meta name="twitter:image" content="https://joshoangtien.dev/joshoangtien.png" />
+    <meta property="og:title" content="Jos Hoàng Tiên" />
+    <meta property="og:site_name" content="Jos Hoàng Tiên" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://joshoangtien.dev/joshoangtien.png" />
+    <meta property="og:image:alt" content="Jos Hoàng Tiên Logo" />
+    <meta property="og:description" content="Jos Hoàng Tiên" />
+    <meta name="description" content="Jos Hoàng Tiên">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Waresome -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'/>
+    <script>
+        (function () { var a = {}; var f = /iPhone/i, h = /iPod/i, i = /iPad/i, r = /\biOS-universal(?:.+)Mac\b/i, g = /\bAndroid(?:.+)Mobile\b/i, j = /Android/i, c = /(?:SD4930UR|\bSilk(?:.+)Mobile\b)/i, d = /Silk/i, b = /Windows Phone/i, k = /\bWindows(?:.+)ARM\b/i, m = /BlackBerry/i, n = /BB10/i, o = /Opera Mini/i, p = /\b(CriOS|Chrome)(?:.+)Mobile/i, q = /Mobile(?:.+)Firefox\b/i; function s(l) { return function ($) { return $.test(l) } } function e(l) { var $ = (l = l || ("undefined" != typeof navigator ? navigator.userAgent : "")).split("[FBAN"); void 0 !== $[1] && (l = $[0]), void 0 !== ($ = l.split("Twitter"))[1] && (l = $[0]); var a = s(l), e = { apple: { phone: a(f) && !a(b), ipod: a(h), tablet: !a(f) && a(i) && !a(b), universal: a(r), device: (a(f) || a(h) || a(i)) && !a(b) }, amazon: { phone: a(c), tablet: !a(c) && a(d), device: a(c) || a(d) }, android: { phone: !a(b) && a(c) || !a(b) && a(g), tablet: !a(b) && !a(c) && !a(g) && (a(d) || a(j)), device: !a(b) && (a(c) || a(d) || a(g) || a(j)) || a(/\bokhttp\b/i) }, windows: { phone: a(b), tablet: a(k), device: a(b) || a(k) }, other: { blackberry: a(m), blackberry10: a(n), opera: a(o), firefox: a(q), chrome: a(p), device: a(m) || a(n) || a(o) || a(q) || a(p) }, any: !1, phone: !1, tablet: !1 }; return e.any = e.apple.universal || e.apple.device || e.android.device || e.windows.device || e.other.device, e.phone = e.apple.phone || e.android.phone || e.windows.phone, e.tablet = e.apple.tablet || e.android.tablet || e.windows.tablet, e } a = e(); if (typeof exports === "object" && typeof module !== "undefined") { module.exports = a } else if (typeof define === "function" && define.amd) { define(function () { return a }) } else { this["isMobile"] = a } })();
+
+        isMobile.any || document.querySelector('html').classList.add('is-desktop');
+    </script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css'>
+    <link rel="stylesheet" href="/resources/assets/css/cv/animate.css">
+    <link rel="stylesheet" href="/resources/assets/css/cv/icomoon.css">
+    <link rel="stylesheet" href="/resources/assets/css/cv/bootstrap.css">
+    <link rel="stylesheet" href="/resources/assets/css/cv/flexslider.css">
+    <link rel="stylesheet" href="/resources/assets/css/cv/owl.carousel.min.css">
+    <link rel="stylesheet" href="/resources/assets/css/cv/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/resources/assets/css/cv/style.css">
+    <title>Jos Hoàng Tiên</title>
+</head>
+<body>
+    <div style='display:none'>
+        <div class='navbar no-items section' id='navbar' name='Navbar'></div>
+    </div>
+    <div id='colorlib-page'>
+        <div class='container-wrap'>
+            <a aria-controls='navbar' aria-expanded='false' class='js-colorlib-nav-toggle colorlib-nav-toggle' data-target='#navbar' data-toggle='collapse' href='#'><i></i></a>
+            <aside class='border js-fullheight' id='colorlib-aside' role='complementary'>
+                <div class='text-center'>
+                    <div class='author-img' style='background-image: url(https://cdn.jsdelivr.net/gh/lamsaodecode/cv@master/images/avatar.jpg);'></div>
+                    <h1 id='colorlib-logo'><a href='index.html'>JOS HOANG TIEN</a></h1>
+                    <span class='position'>Full Stack Web Developer</span>
+                </div>
+                <nav class='navbar' id='colorlib-main-menu' role='navigation'>
+                    <div class='collapse' id='navbar'>
+                        <ul>
+                            <li class='active'><a data-nav-section='about' href='#'>About</a></li>
+                            <li><a data-nav-section='skills' href='#'>Skills</a></li>
+                            <li><a data-nav-section='education' href='#'>Education</a></li>
+                            <li><a data-nav-section='experience' href='#'>Project</a></li>
+                            <li><a data-nav-section='contact' href='#'>Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class='colorlib-footer' style='display:none'>
+                    <a class='btn btn-primary btn-learn text-center' href='https://github.com/lamsaodecode/cv/blob/master/cv.pdf' target='_blank'>Download My CV <i aria-hidden='true' class='fa fa-cloud-download'></i></a>
+                </div>
+            </aside>
+            <div id='colorlib-main'>
+                <section class='colorlib-about' data-section='about'>
+                    <div class='colorlib-narrow-content'>
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class='row row-bottom-padded-sm animate-box' data-animate-effect='fadeInLeft'>
+                                    <div class='col-md-12'>
+                                        <div class='about-desc'>
+                                            <span class='heading-meta'>ABOUT</span>
+                                            <h2 class='colorlib-heading'>Who Am I?</h2>
+                                            <p>I&#8217;m a developer with 1 year of experience in Back-End Web Development (which includes 6 months of experience in Front-End Development).</p>
+                                            <p>Learning new languages and technologies is what I am passionate about (I self-taught Django with 3 weeks). I am considered a team-player because I like to help other and tend to work well within groups.</p>
+                                            <span>
+                                                Target:
+                                                <ul>
+                                                    <li>I like helping other and work well with group. I can also do some mentoring tasks and code reviewing for other members (I also held a presentation about IoC and DI for my team).</li>
+                                                    <li>I am also the owner of an IT blog called: lamsaodecode.dev.</li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class='colorlib-skills' data-section='skills'>
+                    <div class='colorlib-narrow-content'>
+                        <div class='row'>
+                            <div class='col-md-6 col-md-offset-3 col-md-pull-3 '>
+                                <span class='heading-meta'>TECHNICAL SKILLS</span>
+                                <h2 class='colorlib-heading'>MY SKILLS</h2>
+                            </div>
+                        </div>
+                        <div class='row row-pt-md'>
+                            <div class='col-md-3 text-center animate-box'>
+                                <div class='services color-1'>
+                                    <span class='icon'>
+                                        <i aria-hidden='true' class='fa fa-heart-o'></i>
+                                    </span>
+                                    <div class='desc'>
+                                        <h3>PROGRAMMING LANGUAGES</h3>
+                                        <ul class="p-0">
+                                            <li>HTML, CSS</li>
+                                            <li>JavaScript</li>
+                                            <li>PHP</li>
+                                            <li>Python</li>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                        </ul>
+                                        <br/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col-md-3 text-center animate-box'>
+                                <div class='services color-2'>
+                                    <span class='icon'>
+                                        <i aria-hidden='true' class='fa fa-file-code-o'></i>
+                                    </span>
+                                    <div class='desc'>
+                                        <h3>FRAMEWORKS & PLATFORMS
+                                        </h3>
+                                        <ul class="p-0">
+                                            <li>Bootstrap</li>
+                                            <li>Jquery</li>
+                                            <li>Laravel</li>
+                                            <li>VueJS</li>
+                                            <li>Codeigniter</li>
+                                            <li>Angular</li>
+                                            <li>NodeJS</li>
+                                            <li>JSON</li>
+                                            <li>XML</li>
+                                            <li>Firebase</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col-md-3 text-center animate-box'>
+                                <div class='services color-3'>
+                                    <span class='icon'>
+                                        <i aria-hidden='true' class='fa fa-database'></i>
+                                    </span>
+                                    <div class='desc'>
+                                        <h3>Content Management System</h3>
+                                        <ul class="p-0">
+                                            <li>Wordpress</li>
+                                            <li>EC-CUBE</li>
+                                            <li>Joomla</li>
+                                            <li>Magento</li>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col-md-3 text-center animate-box'>
+                                <div class='services color-3'>
+                                    <span class='icon'>
+                                        <i aria-hidden='true' class='fa fa-database'></i>
+                                    </span>
+                                    <div class='desc'>
+                                        <h3>Database Management</h3>
+                                        <ul class="p-0">
+                                            <li>MySQL</li>
+                                            <li>SQL</li>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col-md-12 text-center animate-box'>
+                                <div class='services color-4'>
+                                    <span class='icon'>
+                                        <i aria-hidden='true' class='fa fa-git'></i>
+                                    </span>
+                                    <div class='desc'>
+                                        <h3>VERSION CONTROL</h3>
+                                        <ul class="p-0">
+                                            <li>Git (Git shell & Github)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col-md-12 text-center animate-box'>
+                                <div class='services color-5'>
+                                    <span class='icon'>
+                                        <i aria-hidden='true' class='fa fa-key'></i>
+                                    </span>
+                                    <div class='desc'>
+                                        <h3>KNOWLEDGE</h3>
+                                        <ul class="p-0">
+                                            <li>Deep understanding about OOP, Design Pattern, Dependency Injection, ...</li>
+                                            <li>Good understanding about the AWS process</li>
+                                            <li>Good time management, presentation and teamwork skills ...</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class='colorlib-education' data-section='education'>
+                    <div class='colorlib-narrow-content'>
+                        <div class='row'>
+                            <div class='col-md-6 col-md-offset-3 col-md-pull-3 animate-box' data-animate-effect='fadeInLeft'>
+                                <h2 class='colorlib-heading animate-box'>EDUCATION</h2>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-12 animate-box' data-animate-effect='fadeInLeft'>
+                                <div class='fancy-collapse-panel'>
+                                    <div aria-multiselectable='true' class='panel-group' id='accordion' role='tablist'>
+                                        <div class='panel panel-default'>
+                                            <div class='panel-heading' id='headingOne' role='tab'>
+                                                <h4 class='panel-title'>
+                                                    <a aria-controls='collapseOne' aria-expanded='true' data-parent='#accordion' data-toggle='collapse' href='#collapseOne'>Bach Khoa Aptech Educational System, Vietnam</a>
+                                                </h4>
+                                            </div>
+                                            <div aria-labelledby='headingOne' class='panel-collapse collapse in' id='collapseOne' role='tabpanel'>
+                                                <div class='panel-body'>
+                                                    <div class='row'>
+                                                        <div class='col-md-12'>
+                                                            <p>Currently a former student of FPT Education.</p>
+                                                            <p>Participated in The Face contests.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class='colorlib-experience' data-section='experience'>
+                    <div class='colorlib-narrow-content'>
+                        <div class='row'>
+                            <div class='col-md-6 col-md-offset-3 col-md-pull-3 animate-box' data-animate-effect='fadeInLeft'>
+                                <h2 class='colorlib-heading animate-box'>EXPERIENCES</h2>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class='timeline-centered'>
+                                    <article class='timeline-entry animate-box' data-animate-effect='fadeInLeft'>
+                                        <div class='timeline-entry-inner'>
+                                            <div class='timeline-icon color-1'>
+                                                <i aria-hidden='true' class='fa fa-pencil-square-o'></i>
+                                            </div>
+                                            <div class='timeline-label'>
+                                                <h2><a href='#'>02/2022 - 04/2022</a><span></span></h2>
+                                                <p><strong>Project:</strong> MiiFood</p>
+                                                <p><strong>Project Description:</strong> A small-scale project that allows people in a business environment to quickly and conveniently order drinks and food.</p>
+                                                <p><strong>Team Size:</strong> 5</p>
+                                                <p><strong>Responsiblities:</strong> Develop the feature and reviewing code team members.</p>
+                                                <p><strong>Accomplishments:</strong> Learned new Firebase and NodeJS.</p>
+                                                <p><strong>Technologies:</strong> Front-end: Kotlin & Back-end: NodeJS.</p>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class='col-md-12'>
+                                <div class='timeline-centered'>
+                                    <article class='timeline-entry animate-box' data-animate-effect='fadeInLeft'>
+                                        <div class='timeline-entry-inner'>
+                                            <div class='timeline-icon color-1'>
+                                                <i aria-hidden='true' class='fa fa-pencil-square-o'></i>
+                                            </div>
+                                            <div class='timeline-label'>
+                                                <h2><a href='#'>04/2022 - 07/2022</a><span></span></h2>
+                                                <p><strong>Project:</strong> Smoothly</p>
+                                                <p><strong>Project Description:</strong> A website for scheduling meetings, creating group events and inviting others to join.</p>
+                                                <p><strong>Team Size:</strong> 17</p>
+                                                <p><strong>Responsiblities:</strong> Develop the frameworks and modules of the website.</p>
+                                                <p><strong>Accomplishments:</strong> Learned in-built new Stripe, Zoom, Google Meet.</p>
+                                                <p><strong>Technologies:</strong> Front-end: ReactJS & Back-end: Laravel Framework.</p>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class='col-md-12'>
+                                <div class='timeline-centered'>
+                                    <article class='timeline-entry animate-box' data-animate-effect='fadeInLeft'>
+                                        <div class='timeline-entry-inner'>
+                                            <div class='timeline-icon color-1'>
+                                                <i aria-hidden='true' class='fa fa-pencil-square-o'></i>
+                                            </div>
+                                            <div class='timeline-label'>
+                                                <h2><a href='#'>07/2022 - PRESENT</a><span></span></h2>
+                                                <p><strong>Project:</strong> WillTech</p>
+                                                <p><strong>Project Description:</strong> A platform that enables employers and companys to connect and interact with each other quickly.</p>
+                                                <p><strong>Team Size:</strong> 7</p>
+                                                <p><strong>Responsiblities:</strong> Develop the feaure.</p>
+                                                <p><strong>Accomplishments:</strong> Learned new Django and VueJS.</p>
+                                                <p><strong>Technologies:</strong> Front-end: VueJS & Back-end: Django.</p>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class='col-md-12'>
+                                <div class='timeline-centered'>
+                                    <article class='timeline-entry animate-box' data-animate-effect='fadeInLeft'>
+                                        <div class='timeline-entry-inner'>
+                                            <div class='timeline-icon color-1'>
+                                                <i aria-hidden='true' class='fa fa-pencil-square-o'></i>
+                                            </div>
+                                            <div class='timeline-label'>
+                                                <h2><a href='#'>10/2022 - PRESENT</a><span></span></h2>
+                                                <p><strong>Project:</strong> Alumni</p>
+                                                <p><strong>Project Description:</strong> A platform that helps doctors, nurses, and other medical staff manage patient records, process medical cases, and allows patients to view their own medical history and treatment plans.</p>
+                                                <p><strong>Team Size:</strong> 5</p>
+                                                <p><strong>Responsiblities:</strong> Develop the feature.</p>
+                                                <p><strong>Accomplishments:</strong> Learned Laravel and VueJS.</p>
+                                                <p><strong>Technologies:</strong> Front-end: VueJS & Back-end: Laravel</p>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class='col-md-12'>
+                                <div class='timeline-centered'>
+                                    <article class='timeline-entry animate-box' data-animate-effect='fadeInLeft'>
+                                        <div class='timeline-entry-inner'>
+                                            <div class='timeline-icon color-1'>
+                                                <i aria-hidden='true' class='fa fa-pencil-square-o'></i>
+                                            </div>
+                                            <div class='timeline-label'>
+                                                <h2><a href='#'>10/2022 - PRESENT</a><span></span></h2>
+                                                <p><strong>Project:</strong> SalonCoop</p>
+                                                <p><strong>Project Description:</strong> A platform that delivers all products to the users through referral links or codes for each store.</p>
+                                                <p><strong>Team Size:</strong> 3</p>
+                                                <p><strong>Responsiblities:</strong> Develop the feaure and reviewing code team members.</p>
+                                                <p><strong>Accomplishments:</strong> Learned new Ec-cube. Improved teamwork and communication skills.</p>
+                                                <p><strong>Technologies:</strong> PHP, Symfony Framework or Laravel Framework.</p>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class='colorlib-contact' data-section='contact'>
+                    <div class='colorlib-narrow-content'>
+                        <div class='row'>
+                            <div class='col-md-6 col-md-offset-3 col-md-pull-3 animate-box' data-animate-effect='fadeInLeft'>
+                                <span class='heading-meta'>CONTACT</span>
+                                <h2 class='colorlib-heading'>My Contact</h2>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class='colorlib-feature colorlib-feature-sm animate-box' data-animate-effect='fadeInLeft'>
+                                    <div class='colorlib-icon'>
+                                        <i aria-hidden='true' class='fa fa-envelope-o'></i>
+                                    </div>
+                                    <div class='colorlib-text'>
+                                        <p><a href='mailto:jos.hoangtien@gmail.com'>jos.hoangtien@gmail.com</a></p>
+                                    </div>
+                                </div>
+                                <div class='colorlib-feature colorlib-feature-sm animate-box' data-animate-effect='fadeInLeft'>
+                                    <div class='colorlib-icon'>
+                                        <i aria-hidden='true' class='fa fa-map-marker'></i>
+                                    </div>
+                                    <div class='colorlib-text'>
+                                        <p><a href=''>238 Hoang Quoc Viet, Bac Tu Lien, Ha Noi</a></p>
+                                    </div>
+                                </div>
+                                <div class='colorlib-feature colorlib-feature-sm animate-box' data-animate-effect='fadeInLeft'>
+                                    <div class='colorlib-icon'>
+                                        <i aria-hidden='true' class='fa fa-phone'></i>
+                                    </div>
+                                    <div class='colorlib-text'>
+                                        <p><a href='tel:+84865865591'>+84865865591</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- end:colorlib-main -->
+        </div>
+        <!-- end:container-wrap -->
+    </div>
+    <!-- end:colorlib-page -->
+</body>
+<script src="/resources/assets/js/cv/jquery.min.js"></script>
+<script src="/resources/assets/js/cv/jquery.easing.1.3.js"></script>
+<script src="/resources/assets/js/cv/bootstrap.min.js"></script>
+<script src="/resources/assets/js/cv/jquery.waypoints.min.js"></script>
+<script src="/resources/assets/js/cv/jquery.flexslider-min.js"></script>
+<script src="/resources/assets/js/cv/owl.carousel.min.js"></script>
+<script src="/resources/assets/js/cv/jquery.countTo.js"></script>
+<script src="/resources/assets/js/cv/main.js"></script>
+</html>
