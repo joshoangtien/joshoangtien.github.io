@@ -2,19 +2,17 @@ import { defineThemes } from '../theme/theme.models';
 
 export const { useTheme } = defineThemes({
   dark: {
-    backgroundColor: '#333333',
-    borderColor: '#333333',
-
+    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+    borderColor: 'rgba(255, 255, 255, 0.3)',
     focus: {
-      backgroundColor: '#1ea54c1a',
+      backgroundColor: 'rgba(158, 198, 240, 0.12)',
     },
   },
   light: {
-    backgroundColor: '#ffffff',
-    borderColor: '#e0e0e69e',
-
+    backgroundColor: 'rgba(255, 255, 255, 0.46)',
+    borderColor: 'rgba(255, 255, 255, 0.82)',
     focus: {
-      backgroundColor: '#ffffff',
+      backgroundColor: 'rgba(255, 255, 255, 0.7)',
     },
   },
 });

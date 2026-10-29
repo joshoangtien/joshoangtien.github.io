@@ -55,10 +55,8 @@ function handleUpload(files: FileList | null | undefined) {
 
 <template>
   <div
-    class="flex flex-col cursor-pointer items-center justify-center border-2px border-gray-300 border-opacity-50 rounded-lg border-dashed p-8 transition-colors"
-    :class="{
-      'border-primary border-opacity-100': isOverDropZone,
-    }"
+    class="file-drop flex flex-col cursor-pointer items-center justify-center border-dashed p-8 transition-colors"
+    :class="{ over: isOverDropZone }"
     @click="triggerFileInput"
     @drop.prevent="handleDrop"
     @dragover.prevent
@@ -93,3 +91,16 @@ function handleUpload(files: FileList | null | undefined) {
     </slot>
   </div>
 </template>
+
+<style scoped>
+.file-drop {
+  border: 1px dashed var(--field-edge);
+  border-radius: var(--radius-control);
+  background: var(--field-fill);
+  color: var(--ink-soft);
+}
+
+.file-drop.over {
+  border-color: var(--accent);
+}
+</style>

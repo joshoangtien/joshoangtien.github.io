@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { useAppTheme } from '../theme/themes';
-import { useTheme } from './c-input-text.theme';
 import { generateRandomId } from '@/utils/random';
 import { type UseValidationRule, useValidation } from '@/composable/validation';
 
@@ -73,9 +71,6 @@ const validation
     source: value,
     watch: props.validationWatch,
   });
-
-const theme = useTheme();
-const appTheme = useAppTheme();
 
 const textareaRef = ref<HTMLTextAreaElement>();
 const inputRef = ref<HTMLInputElement>();
@@ -220,47 +215,45 @@ defineExpose({
     align-items: baseline;
   }
 
-  &.error {
-    & > .input {
-      border-color: v-bind('appTheme.error.color');
-      &:hover,
-      &:focus {
-        border-color: v-bind('appTheme.error.color');
-      }
-
-      &:focus {
-        background-color: v-bind('appTheme.error.color + 22');
-      }
-    }
-
-    & .feedback {
-      color: v-bind('appTheme.error.color');
-    }
-  }
-
   & > .label {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     flex: 0 0 v-bind('labelWidth');
     text-align: v-bind('labelAlign');
     padding-right: 12px;
+    color: var(--ink-soft);
+    font-size: 13px;
+    font-weight: 500;
   }
 
   .feedback-wrapper {
     flex: 1 1 0;
     min-width: 0;
   }
+
+  .feedback {
+    display: block;
+    margin-top: 6px;
+    color: var(--error);
+    font-size: 12px;
+  }
+
   .input-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: v-bind('theme.backgroundColor');
-    color: transparent;
-    border: 1px solid v-bind('theme.borderColor');
-    border-radius: 4px;
-    padding: 0 4px 0 12px;
-    transition: border-color 0.2s ease-in-out;
+    min-height: 44px;
+    padding: 0 6px 0 14px;
+    color: var(--ink);
+    background: var(--field-fill);
+    border: 1px solid var(--field-edge);
+    border-radius: var(--radius-control);
+    box-shadow: inset 0 1px 0 var(--glass-inset);
+    backdrop-filter: blur(16px);
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 
     .multiline& {
+      align-items: flex-start;
+      min-height: 0;
       resize: vertical;
       overflow: hidden;
 
@@ -274,10 +267,11 @@ defineExpose({
         outline: none;
         font-family: inherit;
         font-size: inherit;
-        color: v-bind('appTheme.text.baseColor');
+        color: var(--ink);
+        caret-color: var(--accent);
 
         &::placeholder {
-          color: v-bind('appTheme.text.mutedColor');
+          color: var(--ink-soft);
         }
       }
     }
@@ -285,43 +279,47 @@ defineExpose({
     & > .input {
       flex: 1 1 0;
       min-width: 0;
-
-      padding: 8px 0;
+      padding: 11px 0;
       outline: none;
       background-color: transparent;
       background-image: none;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
       box-shadow: none;
       border: none;
-      color: v-bind('appTheme.text.baseColor');
+      color: var(--ink);
+      caret-color: var(--accent);
+      font: inherit;
 
       &::placeholder {
-        color: v-bind('appTheme.text.mutedColor');
+        color: var(--ink-soft);
       }
     }
 
     &:hover {
-      border-color: v-bind('appTheme.primary.color');
+      border-color: color-mix(in srgb, var(--accent) 55%, var(--field-edge));
     }
 
     &:focus-within {
-      border-color: v-bind('appTheme.primary.color');
-
-      background-color: v-bind('theme.focus.backgroundColor');
+      border-color: var(--accent);
+      background: color-mix(in srgb, var(--field-fill) 82%, var(--accent));
+      box-shadow:
+        inset 0 1px 0 var(--glass-inset),
+        0 8px 24px color-mix(in srgb, var(--accent) 16%, transparent);
     }
   }
 
   &.error .input-wrapper {
-    border-color: v-bind('appTheme.error.color');
+    border-color: var(--error);
 
     &:hover,
     &:focus-within {
-      border-color: v-bind('appTheme.error.color');
+      border-color: var(--error);
     }
 
     &:focus-within {
-      background-color: v-bind('appTheme.error.color + 22');
+      background: color-mix(in srgb, var(--field-fill) 82%, var(--error));
+      box-shadow:
+        inset 0 1px 0 var(--glass-inset),
+        0 8px 24px color-mix(in srgb, var(--error) 18%, transparent);
     }
   }
 
@@ -330,7 +328,9 @@ defineExpose({
 
     &:hover,
     &:focus-within {
-      border-color: v-bind('theme.borderColor');
+      border-color: var(--field-edge);
+      background: var(--field-fill);
+      box-shadow: inset 0 1px 0 var(--glass-inset);
     }
 
     & > .input {

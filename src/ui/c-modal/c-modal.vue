@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useTheme } from './c-modal.theme';
-
 defineOptions({
   inheritAttrs: false,
 });
@@ -35,7 +33,6 @@ defineExpose({
   isOpen,
 });
 
-const theme = useTheme();
 const modal = ref();
 
 onClickOutside(modal, () => {
@@ -48,7 +45,7 @@ onClickOutside(modal, () => {
 <template>
   <transition>
     <div v-if="isOpen" class="c-modal--overlay" fixed left-0 top-0 z-10 h-full w-full flex justify-center px-2 :class="{ 'items-center': centered }">
-      <div ref="modal" class="c-modal--container" v-bind="$attrs" max-w-xl w-full flex-grow rounded-md pa-24px>
+      <div ref="modal" class="c-modal--container" v-bind="$attrs" max-w-xl w-full flex-grow pa-24px>
         <slot />
       </div>
     </div>
@@ -57,11 +54,17 @@ onClickOutside(modal, () => {
 
 <style scoped lang="less">
 .c-modal--overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+  backdrop-filter: blur(16px);
 }
 
 .c-modal--container {
-  background-color: v-bind('theme.background');
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--radius);
+  box-shadow: inset 0 1px 0 var(--glass-inset), 0 24px 60px rgba(8, 10, 16, 0.28);
+  backdrop-filter: blur(24px);
+  color: var(--ink);
 }
 
 .v-enter-active,

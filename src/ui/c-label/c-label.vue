@@ -17,7 +17,8 @@ const { label, labelAlign, labelFor, labelPosition, labelWidth } = toRefs(props)
   >
     <label
       v-if="label" :for="labelFor" :style="{ flex: `0 0 ${labelWidth}` }"
-      mb-5px
+      class="c-label"
+      mb-8px
       pr-12px
       :class="{
         'text-left': labelAlign === 'left',
@@ -30,3 +31,11 @@ const { label, labelAlign, labelFor, labelPosition, labelWidth } = toRefs(props)
     <slot />
   </div>
 </template>
+
+<style scoped>
+.c-label {
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 500;
+}
+</style>

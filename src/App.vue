@@ -34,19 +34,5 @@ syncRef(
 </template>
 
 <style>
-body {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  box-sizing: border-box;
-}
+/* Global surface lives in styles/world.css */
 </style>

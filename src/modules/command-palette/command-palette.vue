@@ -4,13 +4,14 @@ import _ from 'lodash';
 import { useCommandPaletteStore } from './command-palette.store';
 import type { PaletteOption } from './command-palette.types';
 
-const isModalOpen = ref(false);
+const props = defineProps<{ hideTrigger?: boolean }>();
+
 const inputRef = ref();
 const router = useRouter();
 const isMac = computed(() => window.navigator.userAgent.toLowerCase().includes('mac'));
 
 const commandPaletteStore = useCommandPaletteStore();
-const { searchPrompt, filteredSearchResult } = storeToRefs(commandPaletteStore);
+const { searchPrompt, filteredSearchResult, isOpen } = storeToRefs(commandPaletteStore);
 
 const keys = useMagicKeys({
   passive: false,
@@ -25,19 +26,14 @@ const keys = useMagicKeys({
   },
 });
 
-whenever(isModalOpen, () => inputRef.value?.focus());
+whenever(isOpen, () => inputRef.value?.focus());
 
-whenever(keys.ctrl_k, open);
-whenever(keys.meta_k, open);
-whenever(keys.escape, close);
-
-function open() {
-  return isModalOpen.value = true;
-}
+whenever(keys.ctrl_k, () => commandPaletteStore.open());
+whenever(keys.meta_k, () => commandPaletteStore.open());
+whenever(keys.escape, () => commandPaletteStore.close());
 
 function close() {
-  isModalOpen.value = false;
-  searchPrompt.value = '';
+  commandPaletteStore.close();
 }
 
 const selectedOptionIndex = ref(0);
@@ -111,8 +107,8 @@ function activateOption(option: PaletteOption) {
 </script>
 
 <template>
-  <div flex-1>
-    <c-button w-full important:justify-start @click="isModalOpen = true">
+  <div :class="props.hideTrigger ? undefined : 'flex-1'">
+    <c-button v-if="!props.hideTrigger" w-full important:justify-start @click="commandPaletteStore.open()">
       <span flex items-center gap-3 op-40>
 
         <icon-mdi-search />
@@ -124,7 +120,7 @@ function activateOption(option: PaletteOption) {
       </span>
     </c-button>
 
-    <c-modal v-model:open="isModalOpen" class="palette-modal" shadow-xl important:max-w-650px important:pa-12px @keydown="handleKeydown">
+    <c-modal v-model:open="isOpen" class="palette-modal" shadow-xl important:max-w-650px important:pa-12px @keydown="handleKeydown">
       <c-input-text ref="inputRef" v-model:value="searchPrompt" raw-text placeholder="Type to search a tool or a command..." autofocus clearable />
 
       <div v-for="(options, category) in filteredSearchResult" :key="category">

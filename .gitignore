@@ -28,6 +28,7 @@ coverage
 *.sw?
 
 .env
+.superpowers/
 /test-results/
 /playwright-report/
 /playwright/.cache/

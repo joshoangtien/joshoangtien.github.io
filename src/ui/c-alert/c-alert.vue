@@ -9,7 +9,7 @@ const variantTheme = computed(() => theme.value[type.value]);
 </script>
 
 <template>
-  <div class="c-alert" flex items-center b-rd-4px pa-5>
+  <div class="c-alert" flex items-center pa-5>
     <div class="c-alert--icon" mr-4 text-40px op-60>
       <slot name="icon">
         <component :is="variantTheme.icon" />
@@ -29,6 +29,8 @@ const variantTheme = computed(() => theme.value[type.value]);
 .c-alert {
   background-color: v-bind('variantTheme.backgroundColor');
   color: v-bind('variantTheme.textColor');
+  border: 1px solid v-bind('variantTheme.borderColor');
+  border-radius: var(--radius-control);
   font-size: inherit;
   line-height: 20px;
 }

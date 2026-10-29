@@ -16,6 +16,7 @@ export const useCommandPaletteStore = defineStore('command-palette', () => {
   const styleStore = useStyleStore();
   const router = useRouter();
   const searchPrompt = ref('');
+  const isOpen = ref(false);
 
   const toolsOptions = toolStore.tools.map(tool => ({
     ...tool,
@@ -87,5 +88,13 @@ export const useCommandPaletteStore = defineStore('command-palette', () => {
   return {
     filteredSearchResult,
     searchPrompt,
+    isOpen,
+    open() {
+      isOpen.value = true;
+    },
+    close() {
+      isOpen.value = false;
+      searchPrompt.value = '';
+    },
   };
 });

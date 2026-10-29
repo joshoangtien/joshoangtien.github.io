@@ -1,13 +1,9 @@
 <script lang="ts" setup>
-import { useTheme } from './c-card.theme';
-
 const props = defineProps<{
   title?: string
 }>();
 
 const { title } = toRefs(props);
-
-const theme = useTheme();
 </script>
 
 <template>
@@ -21,15 +17,22 @@ const theme = useTheme();
 
 <style lang="less" scoped>
 .c-card {
-  background-color: v-bind('theme.backgroundColor');
-  border: 1px solid v-bind('theme.borderColor');
-  border-radius: 4px;
-  padding: 20px 24px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+
+  & + .c-card {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--field-edge);
+  }
 
   &-title {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--ink);
   }
 }
 </style>

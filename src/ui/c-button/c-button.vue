@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { RouteLocationRaw } from 'vue-router';
-import { useAppTheme } from '../theme/themes';
 import { useTheme } from './c-button.theme';
 
 const props = withDefaults(
@@ -46,8 +45,6 @@ const tag = computed(() => {
   }
   return 'button';
 });
-const appTheme = useAppTheme();
-
 const size = computed(() => theme.value.size[sizeName.value]);
 </script>
 
@@ -56,7 +53,7 @@ const size = computed(() => theme.value.size[sizeName.value]);
     :is="tag"
     :href="href ?? to"
     class="c-button"
-    :class="{ disabled, round, circle }"
+    :class="{ disabled, round, circle, [`is-${variant}`]: true }"
     :to="to"
     @click="handleClick"
   >
@@ -74,11 +71,11 @@ const size = computed(() => theme.value.size[sizeName.value]);
   cursor: pointer;
   text-decoration: none;
   height: v-bind('size.width');
-  font-weight: 400;
+  font-weight: 500;
   color: v-bind('variantTheme.textColor');
   padding: 0 14px;
-  border-radius: 4px;
-  transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  border-radius: var(--radius-control);
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 
   background-color: v-bind('variantTheme.backgroundColor');
   display: inline-flex;
@@ -88,6 +85,17 @@ const size = computed(() => theme.value.size[sizeName.value]);
   flex-shrink: 0;
 
   // outline-offset: 1px;
+  &.is-basic {
+    border: 1px solid var(--field-edge);
+    box-shadow: inset 0 1px 0 var(--glass-inset);
+    backdrop-filter: blur(16px);
+  }
+
+  &.is-text {
+    border: 0;
+    box-shadow: none;
+  }
+
   &.round {
     border-radius: 100px;
   }
@@ -108,8 +116,9 @@ const size = computed(() => theme.value.size[sizeName.value]);
     }
   }
 
-  &:focus {
-    outline: 1px solid v-bind('appTheme.primary.color');
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
   &.disabled {

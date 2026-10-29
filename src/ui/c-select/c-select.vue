@@ -142,10 +142,9 @@ function onSearchInput() {
     <div ref="elementRef" relative class="c-select" w-full>
       <div
         flex flex-nowrap cursor-pointer items-center
-        :class="{ 'is-open': isOpen, 'important:border-primary': isOpen }"
+        :class="{ 'is-open': isOpen }"
         class="c-select-input"
         tabindex="0"
-        hover:important:border-primary
         @click="toggleOpen"
         @keydown="handleKeydown"
       >
@@ -204,14 +203,22 @@ function onSearchInput() {
   }
 
   .c-select-input {
-    background-color: v-bind('theme.backgroundColor');
-    border: 1px solid v-bind('theme.borderColor');
-    border-radius: 4px;
+    background: var(--field-fill);
+    border: 1px solid var(--field-edge);
+    border-radius: var(--radius-control);
+    box-shadow: inset 0 1px 0 var(--glass-inset);
+    backdrop-filter: blur(16px);
     padding: 0 12px;
     font-family: inherit;
     font-size: v-bind('size.fontSize');
     height: v-bind('size.height');
-    transition: border-color 0.2s ease-in-out;
+    color: var(--ink);
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+
+    &:hover,
+    &.is-open {
+      border-color: color-mix(in srgb, var(--accent) 55%, var(--field-edge));
+    }
 
     .placeholder, .chevron {
       color: v-bind('appTheme.text.mutedColor');
@@ -219,9 +226,10 @@ function onSearchInput() {
   }
 
   .c-select-dropdown {
-    background-color: v-bind('theme.backgroundColor');
-    border-radius: 4px;
-    // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background: var(--field-fill);
+    border: 1px solid var(--field-edge);
+    border-radius: var(--radius-control);
+    backdrop-filter: blur(20px);
     box-shadow: v-bind('theme.dropdownShadow');
     font-family: inherit;
     font-size: inherit;
@@ -229,10 +237,10 @@ function onSearchInput() {
     padding: 6px;
 
     .c-select-dropdown-option{
-      border-radius: 4px;
+      border-radius: 10px;
       padding: 8px 12px;
       background-color: transparent;
-      transition: background-color 0.2s ease-in-out;
+      transition: background-color 180ms ease;
 
       &.active {
         color: v-bind('theme.option.active.textColor');

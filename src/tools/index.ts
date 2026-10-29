@@ -78,6 +78,7 @@ import type { ToolCategory } from './tools.types';
 import { tool as urlEncoder } from './url-encoder';
 import { tool as urlParser } from './url-parser';
 import { tool as uuidGenerator } from './uuid-generator';
+import { tool as identityGenerator } from './identity-generator';
 import { tool as macAddressLookup } from './mac-address-lookup';
 import { tool as xmlFormatter } from './xml-formatter';
 import { tool as yamlViewer } from './yaml-viewer';
@@ -176,7 +177,7 @@ export const toolsByCategory: ToolCategory[] = [
   },
   {
     name: 'Data',
-    components: [phoneParserAndFormatter, ibanValidatorAndParser],
+    components: [phoneParserAndFormatter, ibanValidatorAndParser, identityGenerator],
   },
 ];
 

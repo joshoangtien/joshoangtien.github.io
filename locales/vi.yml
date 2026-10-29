@@ -1,4 +1,7 @@
 home:
+  findATool: Tìm công cụ.
+  searchPlaceholder: Tìm công cụ
+  backToHome: Tất cả nhóm
   categories:
     newestTools: Công cụ mới nhất
     favoriteTools: 'Công cụ yêu thích của bạn'
@@ -380,3 +383,30 @@ tools:
   text-to-binary:
     title: Chuyển đổi văn bản thành nhị phân ASCII
     description: Chuyển đổi văn bản thành biểu diễn nhị phân ASCII của nó và ngược lại.
+
+  identity-generator:
+    title: Tạo danh tính
+    description: Tạo một người giả với tên, username, email, địa chỉ và dữ liệu test khác.
+    locale: Ngôn ngữ
+    copied: JSON danh tính đã copy
+    button:
+      refresh: Tạo lại
+      copyJson: Copy JSON
+    fields:
+      firstName: Tên
+      lastName: Họ
+      fullName: Họ tên
+      username: Username
+      email: Email
+      phone: Điện thoại
+      gender: Giới tính
+      birthday: Ngày sinh
+      address: Địa chỉ
+      city: Thành phố
+      zip: Mã bưu điện
+      country: Quốc gia
+      job: Nghề nghiệp
+      company: Công ty
+      password: Mật khẩu
+      uuid: UUID
+      userAgent: User agent

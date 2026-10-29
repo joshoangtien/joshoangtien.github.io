@@ -1,4 +1,7 @@
 home:
+  findATool: Find a tool.
+  searchPlaceholder: Find a tool
+  backToHome: All categories
   categories:
     newestTools: Newest tools
     favoriteTools: 'Your favorite tools'
@@ -391,3 +394,30 @@ tools:
   text-to-binary:
     title: Text to ASCII binary
     description: Convert text to its ASCII binary representation and vice versa.
+
+  identity-generator:
+    title: Identity generator
+    description: Generate a fake person with name, username, email, address and other test data.
+    locale: Locale
+    copied: Identity JSON copied to the clipboard
+    button:
+      refresh: Refresh
+      copyJson: Copy JSON
+    fields:
+      firstName: First name
+      lastName: Last name
+      fullName: Full name
+      username: Username
+      email: Email
+      phone: Phone
+      gender: Gender
+      birthday: Birthday
+      address: Address
+      city: City
+      zip: Zip
+      country: Country
+      job: Job
+      company: Company
+      password: Password
+      uuid: UUID
+      userAgent: User agent

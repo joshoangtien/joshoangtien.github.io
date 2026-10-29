@@ -10,7 +10,7 @@ import type { Tool } from '@/tools/tools.types';
 const route = useRoute();
 
 const head = computed<HeadObject>(() => ({
-  title: `${route.meta.name} - IT Tools`,
+  title: `${route.meta.name} · Tools`,
   meta: [
     {
       name: 'description',
@@ -32,34 +32,57 @@ const toolDescription = computed<string>(() => t(`tools.${i18nKey.value}.descrip
 
 <template>
   <BaseLayout>
-    <div class="tool-layout">
-      <div class="tool-header">
-        <div flex flex-nowrap items-center justify-between>
-          <n-h1>
-            {{ toolTitle }}
-          </n-h1>
-
-          <div>
-            <FavoriteButton :tool="{ name: route.meta.name } as Tool" />
-          </div>
+    <article class="workbench">
+      <header class="workbench-header">
+        <div>
+          <h1>{{ toolTitle }}</h1>
+          <p>{{ toolDescription }}</p>
         </div>
+        <FavoriteButton :tool="{ name: route.meta.name } as Tool" />
+      </header>
 
-        <div class="separator" />
-
-        <div class="description">
-          {{ toolDescription }}
-        </div>
+      <div class="workbench-body">
+        <slot />
       </div>
-    </div>
-
-    <div class="tool-content">
-      <slot />
-    </div>
+    </article>
   </BaseLayout>
 </template>
 
 <style lang="less" scoped>
-.tool-content {
+.workbench {
+  margin: 28px auto 0;
+  max-width: 920px;
+  padding: 28px;
+  border-radius: 28px;
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  box-shadow: inset 0 1px 0 var(--glass-inset), 0 24px 60px rgba(8, 10, 16, 0.18);
+  backdrop-filter: blur(24px);
+}
+
+.workbench-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.workbench-header h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.workbench-header p {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
+.workbench-body {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -68,41 +91,14 @@ const toolDescription = computed<string>(() => t(`tools.${i18nKey.value}.descrip
   gap: 16px;
 
   ::v-deep(& > *) {
-    flex: 0 1 600px;
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 
-.tool-layout {
-  max-width: 600px;
-  margin: 0 auto;
-  box-sizing: border-box;
-
-  .tool-header {
-    padding: 40px 0;
-    width: 100%;
-
-    .n-h1 {
-      opacity: 0.9;
-      font-size: 40px;
-      font-weight: 400;
-      margin: 0;
-      line-height: 1;
-    }
-
-    .separator {
-      width: 200px;
-      height: 2px;
-      background: rgb(161, 161, 161);
-      opacity: 0.2;
-
-      margin: 10px 0;
-    }
-
-    .description {
-      margin: 0;
-
-      opacity: 0.7;
-    }
+@media (max-width: 640px) {
+  .workbench {
+    padding: 18px;
   }
 }
 </style>
