@@ -30,23 +30,62 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - run: corepack enable
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8.15.9
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
+
       - name: Install dependencies
-        run: pnpm i
+        run: pnpm i --frozen-lockfile
+
       - name: Build
-        run: pnpm build
+        run: pnpm exec vite build
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+
+      - name: SPA fallback for GitHub Pages
+        run: |
+          cp dist/index.html dist/404.html
+          touch dist/.nojekyll
+          test -f dist/index.html
+          if grep -q '/src/main.ts' dist/index.html; then
+            echo 'Build still points at Vue source' >&2
+            exit 1
+          fi
+          grep -q '/assets/' dist/index.html
+
+      - name: Use GitHub Actions as Pages source
+        uses: actions/github-script@v7
+        continue-on-error: true
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            try {
+              await github.rest.repos.updateInformationAboutPagesSite({
+                owner,
+                repo,
+                build_type: 'workflow',
+              });
+            } catch (error) {
+              core.warning(error.message);
+            }
+
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist folder
           path: './dist'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
